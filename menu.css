@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+
+}
+
+
+.slide{
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    background-color: rgba(0, 40, 45, 1);
+    transition: 0.5s ease;
+    transform: translatey(-350px);
+}
+
+.menu{
+    color: antiquewhite;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    padding-right: 40px;
+    pointer-events: none;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    color: antiquewhites;
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.5s ease-out;
+    height: 50px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+ul li a{
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+ul li a i{
+    width: 35px;
+    text-align: center;
+    transition: 0.15s ease;  
+}
+
+ul li a i:hover{
+    transform: scale(1.2);
+}
+
+input{
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+}
+
+.toggle{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 10px;
+    right: 15px;
+    z-index: 1;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: 0.15s ease;
+}
+
+.toggle:hover{
+    transform: scale(1.2);
+}
+
+.toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: antiquewhite;
+    border-radius: 50px;
+    transition: 0.15s ease;
+}
+
+.toggle .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .bottom_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input:checked ~ .toggle .top_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .bottom_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .toggle .middle_line{
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+input:checked ~ .slide{
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
